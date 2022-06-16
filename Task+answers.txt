@@ -1,0 +1,111 @@
+Алгоритмы - базовая теория  
+
+Задания требуется выполнить с использованием любого из нижеперечисленных языков программирования:
+(если иное не было оговорено в чате с ASTON Trainee)
+
+Java. 
+Просьба использовать 11 версию Java
+
+Задания, необходимо написать код:
+
+1. Составить алгоритм: если введенное число больше 7, то вывести “Привет”
+
+Ответ: файл Hello.java
+
+Код:
+
+package com.company;
+import java.util.Scanner;
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число\n");
+        while (!in.hasNextInt()) {
+            System.out.println("Это не число");
+            in.next();
+        }
+        var Verification = in.nextInt();
+        if(Verification>7){
+            System.out.print("Привет");
+        }
+    }
+}
+
+
+2. Составить алгоритм: если введенное имя совпадает с Вячеслав, то вывести “Привет, Вячеслав”, если нет, то вывести "Нет такого имени"
+
+Ответ: файл HelloV.java
+
+Код:
+
+package com.company;
+import java.util.Scanner;
+public class HelloV {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Введите имя\n");
+        var checkName = in.nextLine();
+        String comparingName = "Вячеслав";
+        if (checkName.equalsIgnoreCase(comparingName)) {
+            System.out.print("Привет, Вячеслав\n");
+        } else {
+            System.out.print("Нет такого имени\n");
+        }
+    }
+}
+
+3. Составить алгоритм: на входе есть числовой массив, необходимо вывести элементы массива кратные 3
+
+Ответ: файл Divide3.java
+
+Код:
+
+package com.company;
+import java.util.Scanner;
+public class Divide3 {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Пожалуйста, введите числа через пробел, программа выведет числа кратные трём\n");
+        String checkStr = in.nextLine();
+        String strArray[] = checkStr.split(" "); 
+        int numArray[] = new int[strArray.length]; 
+        for (int i = 0; i < strArray.length; i++) {
+            if(strArray[i].matches("[-+]?\\d+")){ // 
+                numArray[i] = Integer.parseInt(strArray[i]);
+                if(numArray[i]%3==0 && numArray[i] !=0){
+                    System.out.println(numArray[i]);
+                }
+
+            }
+        }}}
+
+4. Задание, ответ в текстовой форме:
+
+Дана скобочная последовательность: [((())()(())]]
+
+- Можно ли считать эту последовательность правильной?
+
+Ответ: нет, не хватает открывающей квадратной скобки
+
+- Если ответ на предыдущий вопрос “нет” - то что необходимо в ней изменить, чтоб она стала правильной? 
+
+Ответ: Первая открывающая кругаля скобка лишняя, заменить на открывающую квадратную - [[(())()(())]]
+
+Бонусные баллы:
+
++ возможность запуска полученной программы
+
+++ интерактивный ввод значений для обработки и вывод обработаных данных
+(например, через консоль) 
+
+Ответы представить в виде ссылки GitHub 
+
+При наличии исполняемого файла, загрузить его на GitHub, ссылку также отправить в чат.
+
+
+Название проекта должно содержать Вашу фамилию и язык программирования
+Срок выполнения - 3 суток
